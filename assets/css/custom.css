@@ -1,0 +1,110 @@
+:root {
+  --font1: 'Nunito Sans', sans-serif;  
+  --font2: 'Prompt', sans-serif;
+  --color1: bisque;
+  --color2: rgb(48, 39, 39); /* $orange-900*/
+  --color3: rgb(201, 100, 50); /* $orange-600*/
+  --color4: rgb(209, 178, 143);
+  --color5: rgb(109, 129, 82);
+  --color6: #7b1fb1;
+  --color7: rgb(65, 17, 75);
+
+*{
+  padding: 0px;
+}
+
+body {
+  font-family: var(--font1);
+  font-size: 20px;
+  line-height: 1;
+  background-color: var(--color4);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font2);
+  font-weight: bold;
+  background-color: var(--color2)
+}
+
+thead{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: var(--color2);
+  border-left: 1px solid var(--color2);
+  padding: 10px;
+}
+
+footer {
+  padding: 30px;
+  clear: both;
+  text-align: center;
+}
+
+.custom-jumbotron,
+.card-header,
+.hourly-card .info-box-footer,
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  text-align: center;
+  background-color: transparent;
+  color: var(--color2);
+  border-radius: 0;
+  border-bottom: 10px solid var(--color2);
+}
+
+.card-header {
+  background-color: var(--color2);
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid var(--color1);
+  --bs-fuutr-x: 5.5rem;
+}
+
+.hour {
+  background-color: var(--color1);
+  color: var(--color2);
+  border-top: 1px dashed var(--color2);
+}
+
+.past {
+  background-color: var(--color5);
+  color: var(--color1);
+}
+
+.present {
+  background-color: var(--color4);
+  color:var(--color1);
+}
+
+.future {
+  background-color:var(--color3);
+  color: var(--color2);
+}
+
+.saveBtn {
+  border-left: 1px solid var(--color2);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #7b1fb1;
+  color: var(--color1);
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+.saveBtn i:active{
+color: rgb(65, 17, 75);
