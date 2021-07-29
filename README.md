@@ -26,6 +26,8 @@ As a User I created a work day planner that will track what you do throughout th
 
 
 
+<img src="./assets/img/daily planner.PNG" alt=" img of planner"/>
+
 ## Technology used
 
 - HTML
