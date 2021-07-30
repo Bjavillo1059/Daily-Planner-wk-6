@@ -25,6 +25,17 @@ function displayDate() {
 
 setInterval(displayDate, 1000);
 
+var currentHour = moment().hour() // get a number from 24 hr clock (0-23)
+var listItems = $('li')
+for (let i = 0; i < listItems.length; i++) {
+  if ((i + 8) < currentHour) {  
+    $(listItems[i]).addClass('past') // adding a class of past to listItem
+  } else if ((i + 8) == currentHour) {
+    $(listItems[i]).addClass('present') // adding a class of present to listItem
+  } else ((i + 8) > currentHour) 
+    $(listItems[i]).addClass('future')
+}
+
 // date selected needs to be saved to calender link
 // create element for modal --done
 // creat time input for modal --done
@@ -34,55 +45,66 @@ setInterval(displayDate, 1000);
 // create dropdown window for when time has past (need to add class color change to column when selected) --working
 // make modal disappear once info is input
 // make a color change to the task status block when a certain text is written
+// adding elements dynamically
 
-
+renderLastRegistered();
 
 function renderLastRegistered() {
-  var time = localStorage.getItem("time", time);
-  var title = localStorage.getItem("title", title);
-  var description = localStorage.getItem("description", description);
-  var priority = localStorage.getItem("priority", priority);
-  var status = localStorage.getItem("status", status);
+  var listItems = $('li')
 
-
+  for (let i = 0; i < listItems.length; i++) {
+    var Id = $(listItems[i]).attr('id')
+    var storageItem = localStorage.getItem(Id) // looking for info items in localStorage
+    if (storageItem) { //undefined or holding value
+      var p = $('<p>') // make p tag with jquery
+      $(listItems[i]).append(p) // appending p tag to current list item
+      p.text(JSON.parse(storageItem).description) // value added to p tag
+      // console.log(storageItem)
+    }
+  }
 }
+
+// turn into array
+// for loop cycle through list items
+// 
+
 
 modalFormEl.on('submit', function (e) {
   e.preventDefault();
-  const modalData = {
+  const data = {
     time: modalTimeEl.val(),
     title: modalTitleEl.val(),
     description: modalDescriptionEl.val(),
     priority: modalPriorityEl.val(),
     status: modalTaskStatusEl.val()
   }
-  console.log(modalData);
+  console.log(data);
 
-  if (modalTaskText === 'Completed') {
-    $('#modal-status-input').addClass('text-white', 'bg-success');
-  } else if (modalTaskText === 'Not Completed') {
-    $('#modal-status-input').addClass('text-white', 'bg-danger');
-  } else if (modalTaskText === 'Time Remains') {
-    $('#modal-status-input').addClass('bg-warning');
-  } else (modalTaskText === 'On Hold')
-  $('#modal-status-input').addClass('text-white', 'bg-dark');
+  // if (modalTaskText === 'Completed') {
+  //   $('#modal-status-input').addClass('text-white', 'bg-success');
+  // } else if (modalTaskText === 'Not Completed') {
+  //   $('#modal-status-input').addClass('text-white', 'bg-danger');
+  // } else if (modalTaskText === 'Time Remains') {
+  //   $('#modal-status-input').addClass('bg-warning');
+  // } else (modalTaskText === 'On Hold')
+  // $('#modal-status-input').addClass('text-white', 'bg-dark');
 
 
 
-  var time = modalTimeEl.val();
-  localStorage.setItem("time", time);
+  localStorage.setItem(data.time, JSON.stringify(data));
 
-  var title = modalTitleEl.val();
-  localStorage.setItem("title", title);
+  // var time = modalTimeEl.val();
+  // var title = modalTitleEl.val();
+  // localStorage.setItem("title", data.title);
 
-  var description = modalDescriptionEl.val();
-  localStorage.setItem("description", description);
+  // var description = modalDescriptionEl.val();
+  // localStorage.setItem("description", data.description);
 
-  var priority = modalPriorityEl.val();
-  localStorage.setItem("priority", priority);
+  // var priority = modalPriorityEl.val();
+  // localStorage.setItem("priority", data.priority);
 
-  var status = modalTaskStatusEl.val();
-  localStorage.setItem("status", status);
+  // var status = modalTaskStatusEl.val();
+  // localStorage.setItem("status", data.status);
 
   renderLastRegistered();
 });

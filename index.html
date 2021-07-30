@@ -8,7 +8,6 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./assets/css/custom.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,9 +45,27 @@
     [class*="hourly-card"] {
       background-color: rgb(201, 178, 143);
     }
-  </style>
 
-  <link rel="stylesheet" href="./assets/css/custom.css" />
+    p {
+      display: inline;
+    }
+
+    .past {
+      background-color: red;
+      color: var(light);
+    }
+
+    .present {
+      background-color: green;
+      color: var(light);
+    }
+
+    .future {
+      background-color: blue;
+      color: var(dark);
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="./assets/css/custom.css">
 
 </head>
 
@@ -152,15 +169,15 @@
                   <label for="modal-time-input">Time</label>
                   <select class="form-control" id="modal-time-input">
                     <option selected disabled>Pick one...</option>
-                    <option class="text-white bg-primary" value="0800 - 0900">0800 - 0900</option>
-                    <option class="text-white bg-secondary" value="0900 - 1000">0900 - 1000</option>
-                    <option class="text-white bg-success" value="1000 - 1100">1000 - 1100</option>
-                    <option class="text-whtie bg-danger" value="1100 - 1200">1100 - 1200</option>
-                    <option class="text-dark bg-warning" value="1100 - 1200">1200 - 1300</option>
-                    <option class="text-dark bg-info" value="1100 - 1200">1300 - 1400</option>
-                    <option class="text-dark bg-light" value="1100 - 1200">1400 - 1500</option>
-                    <option class="text-whtie bg-dark" value="1100 - 1200">1500 - 1600</option>
-                    <option class="text-whtie bg-primary" value="1100 - 1200">1600 - 1700</option>
+                    <option class="text-white bg-primary" value="time-eight">0800 - 0900</option>
+                    <option class="text-white bg-secondary" value="time-nine">0900 - 1000</option>
+                    <option class="text-white bg-success" value="time-ten">1000 - 1100</option>
+                    <option class="text-whtie bg-danger" value="time-eleven">1100 - 1200</option>
+                    <option class="text-dark bg-warning" value="time-twelve">1200 - 1300</option>
+                    <option class="text-dark bg-info" value="time-thirteen">1300 - 1400</option>
+                    <option class="text-dark bg-light" value="time-fourteen">1400 - 1500</option>
+                    <option class="text-whtie bg-dark" value="time-fifteen">1500 - 1600</option>
+                    <option class="text-whtie bg-primary" value="time-sixteen">1600 - 1700</option>
                   </select>
                 </div>
 
