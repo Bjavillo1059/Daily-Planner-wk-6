@@ -34,7 +34,6 @@ As a User I created a work day planner that will track what you do throughout th
 - CSS
 - Javascript
 - Jquery
-- Jquery UI
 - Bootstrap 5
 - Moment.js
 - Google Fonts
