@@ -20,7 +20,7 @@ THEN the saved events persist
 
 ## Description
 
-As a User I created a work day planner that will track what you do throughout the working day.  It will display the current time and date when the page is opened.  A User can select a date by clicking on the date input field which will bring up a display of multiple months.  Below the date is a work day hourly schedule that a User can input information to, by clicking on the add info button at the of the houlry input field. Upon clicking the "add info button" a modal will appear with input fields that will save and print to the table at the bottom of the page.  Inside the table you have the option of selecting whether the event that was input is either "Completed, Not Completed, Time Remaining to complete you task, or put the task on hold.  A User can simply click outside the modal window to close it and/or complete the input fields to populate the information to planner table.
+As a User I created a work day planner that will track what you do throughout the working day.  It will display the current time and date when the page is opened.  A User can select a date by clicking on the date input field which will bring up a display of multiple months.  Below the date is a work day hourly schedule that a User can input information to. By clicking on the "add info button" a modal will appear with input fields that will save and print to the hours specified timeblock.  A User can simply click outside the modal window to close it and/or complete the input fields to populate the information to planner timeblocks.
 
 ## Deployment
 
