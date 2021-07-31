@@ -3,50 +3,139 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;1,200&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;1,200&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap"
+    rel="stylesheet">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-    <title>Daily Planner</title>
+  <title>Daily Planner</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- css will not override bootstrap -->
+  <style>
+    :root {
+      --font1: 'Nunito Sans', sans-serif;
+      --font2: 'Prompt', sans-serif;
+      --color1: bisque;
+      --color2: rgb(48, 39, 39);
+      --color3: rgb(201, 100, 50);
+      --color4: rgb(209, 178, 143);
+      --color5: rgb(109, 129, 82);
+      --color6: #7b1fb1;
+
+
+      body {
+        font-family: var(--font1);
+        font-size: 20px;
+        line-height: 1;
+        background-color: var(--color4);
+      }
+
+      textarea {
+        background: transparent;
+        border: none;
+        resize: none;
+        color: var(--color2);
+        border-left: 1px solid var(--color2);
+        padding: 10px;
+      }
+
+      .jumbotron {
+        font-family: var(--font1);
+        text-align: center;
+        background-color: transparent;
+        color: var(--color2);
+        border-radius: 0;
+        border-bottom: 10px solid var(--color2);
+      }
+
+      .description {
+        white-space: pre-wrap;
+      }
+
+      .time-block {
+        text-align: center;
+        border-radius: 15px;
+      }
+
+      .row {
+        font-family: var(--font2);
+        white-space: pre-wrap;
+        height: 80px;
+        border-top: 1px solid var(--color1);
+      }
+
+      .hour {
+        background-color: var(--color1);
+        color: var(--color2);
+        border-top: 1px dashed var(--color2);
+      }
+
+      .past {
+        background-color: var(--color4);
+        color: var(--color1);
+      }
+
+      .present {
+        background-color: var(--color3);
+        color: var(--color1);
+      }
+
+      .future {
+        background-color: var(--color5);
+        color: var(--color1);
+      }
+
+      .saveBtn {
+        border-left: 1px solid var(--color2);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: var(--color6);
+        color: var(--color1);
+      }
+
+      .saveBtn i:hover {
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+  </style>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
 </head>
 
 <body>
-    <header class="jumbotron text-center text-white bg-dark fw-bold">
-        <h1 class="display-3 fw-bold">Daily Planner</h1>
-        <h2 class="current-time display-6 fw-bold"> Current Time & Date: <br />
-            <p id="time-display" class="lead display-6 fw-bold"></p>
-        </h2>
-    </header>
+  <header class="jumbotron text-center text-white bg-dark fw-bold">
+    <h1 class="display-3 fw-bold">Daily Planner</h1>
+    <h2 class="current-time display-6 fw-bold"> Current Time & Date: <br />
+      <p id="time-display" class="lead display-6 fw-bold"></p>
+    </h2>
+  </header>
 
-    <div class="container" id="hourly-container">
-        <!-- Timeblocks go here -->
-    </div>
+  <div class="container" id="hourly-container">
+    <!-- Timeblocks go here -->
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
