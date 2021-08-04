@@ -7,6 +7,9 @@ As a User I created a work day planner that will track what you do throughout th
 
 ## Deployment
 
+[GitHub repo](https://github.com/Bjavillo1059/Daily-Planner-wk-6)
+[Deployed page](https://bjavillo1059.github.io/Daily-Planner-wk-6/)
+
 
 <img src="./assets/img/daily planner.PNG" alt=" img of planner"/>
 
